@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Bebida | DrinkApp</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/create.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar_inner">
+      <a class="brand" href="index.html">DrinkApp</a>
+      <nav class="nav">
+        <a href="dashboard.html">Painel</a>
+        <a href="profile.html">Perfil</a>
+        <button id="logout-button" class="btn btn-text" type="button">Sair</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="page_header">
+      <div>
+        <p class="eyebrow">Criar</p>
+        <h1>Nova bebida</h1>
+      </div>
+        <a class="btn btn-ghost" href="dashboard.html">Cancelar</a>
+    </section>
+
+    <section class="card">
+      <form id="drink-form" class="form drink-form" novalidate>
+        <div class="form_grid">
+          <label><span>Nome</span><input name="strDrink" type="text" required></label>
+          <label><span>Categoria</span><input name="strCategory" type="text"></label>
+          <label class="form_full"><span>Instruções</span><textarea name="strInstructions" rows="5"></textarea></label>
+          <label class="form_full"><span>URL da imagem</span><input name="strDrinkThumb" type="url" placeholder="https://"></label>
+        </div>
+
+        <section class="subsection">
+          <div class="section_header">
+            <h2>Ingredientes e Medidas</h2>
+            <span class="section_meta">Até 15 pares</span>
+          </div>
+          <div id="ingredient-fields" class="ingredient-list"></div>
+        </section>
+
+        <button class="btn btn-primary" type="submit">Salvar Bebida</button>
+        <div id="drink-form-message" class="message" role="alert" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar | DrinkApp</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/login.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar_inner">
+      <a class="brand" href="index.html">DrinkApp</a>
+      <nav class="nav">
+        <a href="register.html">Registrar</a>
+        <a href="dashboard.html">Painel</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page page-auth">
+    <section class="card auth-card">
+      <h1>Entrar</h1>
+      <p>Use sua conta para acessar bebidas, dados do perfil e suas receitas.</p>
+      <form id="login-form" class="form" novalidate>
+        <label>
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+        <label>
+          <span>Senha</span>
+          <input type="password" name="password" required>
+        </label>
+        <button class="btn btn-primary" type="submit">Entrar</button>
+        <p class="form_helper">Ainda não tem conta? <a href="register.html">Crie uma</a>.</p>
+        <div id="login-message" class="message" role="alert" aria-live="polite"></div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

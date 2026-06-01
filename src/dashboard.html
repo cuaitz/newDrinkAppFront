@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel | DrinkApp</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="module" src="js/dashboard.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar_inner">
+      <a class="brand" href="index.html">DrinkApp</a>
+      <nav class="nav">
+        <a href="dashboard.html" aria-current="page">Painel</a>
+        <a href="create.html">Criar bebida</a>
+        <a href="profile.html">Perfil</a>
+        <button id="logout-button" class="btn btn-text" type="button">Sair</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page">
+    <section class="page_header">
+      <div>
+        <p class="eyebrow">Visão Geral</p>
+        <h1>Painel</h1>
+      </div>
+        <a class="btn btn-primary" href="create.html">Adicionar Bebida</a>
+    </section>
+
+    <section class="card summary" id="dashboard-summary"></section>
+
+    <section class="section">
+      <div class="section_header">
+        <h2>Todas as Bebidas</h2>
+        <span class="section_meta" id="all-drinks-count"></span>
+      </div>
+      <div id="all-drinks-grid" class="grid"></div>
+    </section>
+
+    <section class="section">
+      <div class="section_header">
+        <h2>Minhas Bebidas</h2>
+        <span class="section_meta" id="my-drinks-count"></span>
+      </div>
+      <div id="my-drinks-grid" class="grid"></div>
+    </section>
+  </main>
+</body>
+</html>

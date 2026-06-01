@@ -1,16 +1,10 @@
-const fallbackApiBaseUrl =
-  typeof window !== 'undefined' && window.location.origin && window.location.origin !== 'null'
-    ? window.location.origin
-    : 'http://localhost:3000';
-
-const appConfig = window._APP_CONFIG_ || {};
 
 export const CONFIG = {
-  APP_NAME: appConfig.APP_NAME || 'DrinkApp',
-  API_BASE_URL: String(appConfig.API_BASE_URL || fallbackApiBaseUrl).replace(/\/$/, ''),
+  APP_NAME: 'DrinkApp',
+  API_BASE_URL: 'https://new-drink-app-node.vercel.app/',
   STORAGE_KEYS: {
-    token: 'drinkHub.token',
-    userId: 'drinkHub.userId'
+    token: 'drinkapp.token',
+    userId: 'drinkapp.userId'
   },
   ROUTES: {
     login: 'login.html',

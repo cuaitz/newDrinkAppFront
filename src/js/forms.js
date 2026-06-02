@@ -22,23 +22,42 @@ export const mountIngredientFields = (container, prefix = 'drink') => {
   container.innerHTML = ingredientMarkup(prefix);
 };
 
-export const collectDrinkPayload = (form) => {
+export const collectDrinkPayload = async (form) => {
   const formData = new FormData(form);
   const payload = {};
 
   for (const [key, value] of formData.entries()) {
-    const normalized = typeof value === 'string' ? value.trim() : value;
-    payload[key] = normalized ? normalized : null;
+    if (value instanceof File && value.name) {
+      payload[key] = await fileToBase64(value);
+    } else {
+      const normalized =
+        typeof value === 'string' ? value.trim() : value;
+
+      payload[key] = normalized ? normalized : null;
+    }
   }
 
   return payload;
 };
+
+const fileToBase64 = (file) =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+
+    reader.readAsDataURL(file);
+  });
 
 export const fillDrinkForm = (form, drink = {}) => {
   if (!form) return;
 
   Array.from(form.elements).forEach((element) => {
     if (!element.name) return;
+
+    if (element.type === 'file') return;
+    
     element.value = drink[element.name] ?? '';
   });
 };

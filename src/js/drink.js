@@ -81,7 +81,7 @@ const loadDrink = async () => {
         setMessage(editMessage, 'Atualizando bebida...');
 
         try {
-          const payload = collectDrinkPayload(editForm);
+          const payload = await collectDrinkPayload(editForm);
           await apiRequest(`api/drinks/${drinkId}`, {
             method: 'PUT',
             body: payload

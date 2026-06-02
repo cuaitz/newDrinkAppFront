@@ -25,7 +25,7 @@ form?.addEventListener('submit', async (event) => {
   setMessage(message, 'Salvando bebida...');
 
   try {
-    const payload = collectDrinkPayload(form);
+    const payload = await collectDrinkPayload(form);
     const drink = await apiRequest('api/drinks', {
       method: 'POST',
       body: payload

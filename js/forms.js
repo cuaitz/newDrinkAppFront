@@ -27,8 +27,12 @@ export const collectDrinkPayload = async (form) => {
   const payload = {};
 
   for (const [key, value] of formData.entries()) {
-    if (value instanceof File && value.name) {
-      payload[key] = await fileToBase64(value);
+    if (value instanceof File) {
+      if (value.name && value.size > 0) {
+        payload[key] = await fileToBase64(value);
+      } else {
+        payload[key] = null;
+      }
     } else {
       const normalized =
         typeof value === 'string' ? value.trim() : value;

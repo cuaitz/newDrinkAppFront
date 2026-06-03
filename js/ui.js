@@ -24,7 +24,7 @@ export const setMessage = (element, message, status = '') => {
 
 export const emptyState = (message) => `<div class="empty-state">${escapeHtml(message)}</div>`;
 
-export const getDrinkImage = (drink) => drink?.strDrinkThumb || 'https://images.unsplash.com/photo-1514361892635-e2e4f2b3c3d6?auto=format&fit=crop&w=1200&q=80';
+export const getDrinkImage = (drink) => drink?.strDrinkThumb ?? '';
 
 export const getIngredientPairs = (drink) => {
   const items = [];
